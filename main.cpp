@@ -53,13 +53,21 @@
 #include "nrf_delay.h"
 #include "boards.h"
 
+#include "nrf_log.h"
+#include "nrf_log_ctrl.h"
+#include "nrf_log_default_backends.h"
+
 #include "Test.h"
+
+static void log_init(void);
 
 /**
  * @brief Function for application main entry.
  */
 int main(void)
 {
+	log_init();
+
 	Test objTest;
 	objTest.Initialize();
     /* Configure board. */
@@ -73,9 +81,22 @@ int main(void)
             bsp_board_led_invert(i);
             nrf_delay_ms(objTest.GetValue());
         }
+    	NRF_LOG_INFO("log");
+    	NRF_LOG_FLUSH();
     }
 }
 
 /**
  *@}
  **/
+
+
+/**@brief Function for initializing the nrf log module.
+ */
+static void log_init(void)
+{
+    ret_code_t err_code = NRF_LOG_INIT(NULL);
+    APP_ERROR_CHECK(err_code);
+
+    NRF_LOG_DEFAULT_BACKENDS_INIT();
+}
