@@ -321,7 +321,7 @@
                 			
             </target>
             			
-            <target name="sdk_config" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+            <target name="run_sdk_config" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                 				
                 <buildCommand>make</buildCommand>
                 				
