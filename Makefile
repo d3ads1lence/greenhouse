@@ -33,6 +33,7 @@ SRC_FILES += \
   $(SDK_ROOT)/components/libraries/strerror/nrf_strerror.c \
   $(SDK_ROOT)/modules/nrfx/soc/nrfx_atomic.c \
   $(PROJ_DIR)main.cpp \
+  $(PROJ_DIR)TaskManager.cpp \
   $(PROJ_DIR)Application/Test.cpp \
   $(SDK_ROOT)/modules/nrfx/mdk/system_nrf52840.c \
   $(SDK_ROOT)/external/segger_rtt/SEGGER_RTT.c \
